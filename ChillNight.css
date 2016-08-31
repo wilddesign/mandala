@@ -1,11 +1,10 @@
 	body.first{
-
 		font-family: 'Orbitron', sans-serif;
 		color:black;
 	}
 	
 	.container{
-	margin-top:100px;
+		margin-top:100px;
 	}
 
 
@@ -41,17 +40,17 @@
 
 /*////////////////////////////////////////////////////*/
 
-.logo{
-height:50px;
-background-image:url(fotka.svg);
-background-size:cover;
-}
-
-
-
-.invis{
-display:none;
-}
+	.logo{
+		height:50px;
+		background-image:url(fotka.svg);
+		background-size:cover;
+	}
+	
+	
+	
+	.invis{
+		display:none;
+	}
 
 /*////////////////////////////////////////////////////*/
 
