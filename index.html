@@ -1,0 +1,127 @@
+﻿   <!--
+   
+   
+   
+   @@@@  @@@@     @     @@@@        @@   @@ @@@@  @
+   @   @ @       @ @    @   @       @ @ @ @ @     @
+   @@@@  @@@@   @@@@@   @   @       @  @  @ @@@@  @
+   @ @   @     @     @  @   @       @     @ @     
+   @  @  @@@@ @       @ @@@@        @     @ @@@@  @
+   
+	This project uses a MVC framework, namely a rather simple one: Backbone.js.
+	Here I created a single-page application which generates graphics according to a preset model.
+	Backbone is used here as a nice way of providing the user with a control over the graphics via hypertext.
+	
+	Additionally, I wanted to create a little piece of art, so I used Paper.js framework, designed to facilitate the rendering
+	of HTML5's canvas graphics and animations. Here I was inspired by a symbol of Indian religion and art: the mandala.
+
+	The app applies RWD with the use of Bootstrap 3.
+	The project was made in September 2015 and refined later.
+   -->
+
+   <!doctype html>
+	
+<html>	
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="description" content="Mandala">
+	<meta name="author" content="Wojciech Nogaś">
+	<meta name="keywords" content=""/>
+	<meta http-equiv="content-language" lang="en">
+	
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-2">
+ 
+
+	<link rel="stylesheet" type="text/css" href="ChillNight.css">
+	<link rel="icon" href="favicon.ico" sizes="16x16" type="image/ico">
+	
+	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="jquery-2.1.4.js"></script>
+	
+	<title>Mandala App</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->   
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<!-- Backbone.JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js" type="text/javascript"></script> 	
+	<!-- Paper.JS -->
+	<script type="text/javascript" src="paper.js"></script>	
+	<!-- my script -->
+	<script src="chillnight.js"></script>	
+	<script type="text/paperscript" canvas="gresized" src="graphics.js"></script>
+</head>
+
+
+
+<body class="first">
+
+
+
+<div class="container">
+	<!-- here a grid with Bootstrap -->
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+				<div class="row">
+					<div class="col-md-9 col-sm-9 col-xs-9">
+						<nav>
+							<ul>
+								<li><a href="#stage"><p class="lead">Midnight Fire</p></a></li>
+								<li><a href="#forest"><p class="lead">Forest Dawn</p></a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3">
+						<img class="img-responsive" src="fotka.svg" height="70px">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<div class="row links">
+		<div class="col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-5 col-xs-6 col-xs-offset-4">
+			<ul class="list-unstyled list-inline">
+				<li><a href="#info" id="inf"><span class="glyphicon glyphicon-info-sign lead"></span></a></li>
+				<li><a href="https://wnogas.firebaseapp.com"><span class="glyphicon glyphicon-envelope lead"></span></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+			<header>
+				<p class="invis small" id="info">Midnight style chooses warm mandalas and forest makes them in cool colors. 
+				After you choose, the graphic panel opens. Click then and...they break loose. 
+				Made with wonderful & easy to use Paper.JS</p>
+			</header>	
+		</div>			
+	</div>	
+</div>
+	
+
+
+
+
+
+<div class="container-fluid" id="graph">
+	<canvas id="graphic" width="100" height="100" style="display:block;"></canvas>
+</div>
+
+</body>
+</html>
